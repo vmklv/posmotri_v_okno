@@ -22,7 +22,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: var(--color-white);
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: var(--color-background);
 }
@@ -52,15 +52,15 @@ a {
 
 button {
   cursor: pointer;
+  user-select: none;
 }
-
 
 .button {
   padding: 5px 72px;
   background-color: transparent;
   border: 1px solid var(--color-white);
   color: var(--color-white);
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
 }
@@ -83,7 +83,7 @@ button {
   width: 1140px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   margin: auto;
 }
 
@@ -95,6 +95,20 @@ button {
   width: 100%;
 }
 
+.title {
+  color: var(--color-white);
+  font-family: Oswald, Arial, Helvetica, sans-serif;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 94%; /* 70.5px */
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: var(--color-gray);
+}
+
 .content__details {
   width: 35%;
 }
@@ -102,10 +116,25 @@ button {
 .content__list {
   height: 298px;
   overflow: auto;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content__video-card-description-container {
+  width: 51%;
 }
 
 .content__video-card-thumbnail {
-  width: 100%;
+  width: 49%;
+  padding: 2px;
 }
 
 .search-form {
@@ -126,12 +155,6 @@ button {
   margin-top: 5px;
 }
 
-.search-form__label {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-
 .search-form__pseudo-checkbox {
   display: inline-flex;
   width: 19px;
@@ -141,9 +164,21 @@ button {
   justify-content: center;
 }
 
-.search-form__label:has(.search-form__checkbox:checked) .search-form__pseudo-checkbox:after {
-  content: '';
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
-  background-color: var(--color-white);
+.search-form__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  user-select: none;
+
+  &:has(.search-form__checkbox:checked) {
+    .search-form__pseudo-checkbox {
+      &::after {
+        content: "";
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        background-color: var(--color-white);
+      }
+    }
+  }
 }
