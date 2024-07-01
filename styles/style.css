@@ -1,3 +1,10 @@
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-gray: #545050;
+  --color-background: #1b1919;
+}
+
 *,
 *::before,
 *::after {
@@ -12,10 +19,10 @@ html {
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
-  color: #fff;
+  color: var(--color-white);
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
-  background-color: #1b1919;
+  background-color: var(--color-background);
 }
 
 h1,
@@ -35,4 +42,41 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.content {
+  width: 1140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result {
+  width: 62.3%;
+}
+
+.result__video {
+  width: 100%;
+}
+
+.content__details {
+  width: 35%;
+}
+
+.content__list {
+  height: 298px;
+  overflow: auto;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
 }
